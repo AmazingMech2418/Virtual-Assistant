@@ -3,9 +3,23 @@ var thesauruslist = [[]];
 function run(f,params) {
 window[f](params);
 }
+var inlist = [];
+var outlist = [];
+function newIn(word) {
+inlist.push(word);
+}
+function newOut(f) {
+outlist.push(f);
+}
+var rtrn;
 function process(txt) {
-
-
+  rtrn = "";
+for(var zz=0; zz<inlist.length;zz++){
+if(checkWord(txt,inlist[zz])){
+run(outlist[zz],txt);
+}
+}
+return rtrn;
 }
 var p = [".",",",'?','!'];
 function split(txt,str) {
