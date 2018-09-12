@@ -48,3 +48,17 @@ return true;
 }
 return false;
 }
+
+// Adding Info
+function addWord(word) {
+words.push(word);
+}
+
+function addSynonym(word,syn) {
+thesauruslist[words.search(word)].push(syn);
+}
+
+function addKnowledge(inin,outout) {
+newIn(inin);
+  newOut(outout);
+}
