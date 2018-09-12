@@ -8,15 +8,19 @@ var outlist = [];
 function newIn(word) {
 inlist.push(word);
 }
-function newOut(f) {
-outlist.push(f);
+function newOut(f,isFunction) {
+outlist.push({val:f,f:isFunction});
 }
 var rtrn;
 function process(txt) {
   rtrn = "";
 for(var zz=0; zz<inlist.length;zz++){
 if(checkWord(txt,inlist[zz])){
-run(outlist[zz],txt);
+  if(outlist[zz].f) {
+run(outlist[zz].val,txt);
+  } else {
+  run("say",outlist[zz].val);
+  }
 }
 }
 return rtrn;
@@ -58,7 +62,7 @@ function addSynonym(word,syn) {
 thesauruslist[words.search(word)].push(syn);
 }
 
-function addKnowledge(inin,outout) {
+function addKnowledge(inin,outout,isFunction) {
 newIn(inin);
-  newOut(outout);
+  newOut(outout,isFunction);
 }
