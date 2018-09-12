@@ -59,7 +59,7 @@ words.push(word);
 }
 
 function addSynonym(word,syn) {
-thesauruslist[words.search(word)].push(syn);
+thesauruslist[words.indexOf(word)].push(syn);
 }
 
 function addKnowledge(inin,outout,isFunction) {
