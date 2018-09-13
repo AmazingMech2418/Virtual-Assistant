@@ -1,4 +1,5 @@
 addWord("apiMessages");
+thesauruslist.push([]);
 addSynonym("apiMessages","messages of");
 addSynonym("apiMessages","notifications of");
 addKnowledge("apiMessages","getAPI",true);
