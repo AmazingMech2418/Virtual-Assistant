@@ -15,5 +15,5 @@ $.noConflict
         }});return rtrn;
             }
 function getAPI(e) {
-return require("https://api.scratch.mit.edu/users/"+e.split(" ")[e.split(" ").length-1]+"/messages/count").count;
+say(require("https://api.scratch.mit.edu/users/"+e.split(" ")[e.split(" ").length-1]+"/messages/count").count);
 }
